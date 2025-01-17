@@ -1,6 +1,6 @@
 import React from "react";
 import UserProfileCard from "./Components/UserProfileCard";
-import "./App.css"; // New CSS file for app-wide styles
+import "./App.css";
 
 const App = () => {
   return (
