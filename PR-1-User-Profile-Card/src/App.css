@@ -1,0 +1,19 @@
+/* App.css */
+.app-container {
+  background-image: url("https://images.unsplash.com/photo-1536323760109-ca8c07450053?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&w=1920&h=1080");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 0 auto;
+  justify-content: center;
+}
