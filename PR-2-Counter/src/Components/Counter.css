@@ -1,0 +1,85 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("https://wallpapers.com/images/hd/futuristic-desktop-1920-x-1080-k9gw6armkt7i7159.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.counter-container {
+  text-align: center;
+  background: url("https://4kwallpapers.com/images/walls/thumbs_2t/19814.png");
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  backdrop-filter: blur(10px);
+}
+
+/* Title Styling */
+h1 {
+  color: #2e3131;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 20px;
+}
+
+/* Count Display Styling */
+h3 {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #392e4a;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+
+button {
+  background: #f0f0f3;
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2),
+    -8px -8px 15px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect: Elevate Button */
+button:hover {
+  background: #e0e0e3;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Button Active (Pressed) State */
+button:active {
+  background: #d0d0d3;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+  transform: translateY(2px);
+}
+
+/* Disabled Button Styling */
+button:disabled {
+  background: #f5f5f5;
+  color: #bbb;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Focus State */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 122, 204, 0.4);
+}
