@@ -1,0 +1,131 @@
+* {
+    margin: 0 auto;
+}
+body {
+    background: url(https://www.chromethemer.com/download/hd-wallpapers/abstract-3d-3840x2160.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden; /* Prevents scrolling */
+    height: 100vh;
+}
+.feedback-container {
+    max-width: 600px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  h2 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #bbb;
+  }
+  
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    background: #2b2b2b;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #2b2b2b;
+    color: white;
+    resize: none;
+  }
+  
+  .char-count {
+    font-size: 12px;
+    text-align: right;
+    color: #888;
+  }
+  
+  .rating-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+  }
+  
+  .rating-stars {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .star {
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .star.selected {
+    color: gold;
+  }
+  
+  .privacy-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    padding: 10px;
+    border: none;
+    background: #ff7b00;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background: #e66a00;
+  }
+  
+  .sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
