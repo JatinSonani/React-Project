@@ -72,6 +72,9 @@
   font-weight: 700;
   margin-top: 10px;
 }
+.product-title:hover{
+  color: #64b496;
+}
 
 .product-price {
   color: #64b496;

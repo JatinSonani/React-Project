@@ -111,3 +111,6 @@
   line-height: 15px;
   font-weight: 600;
 }
+.cr-right-bar-item span:hover{
+  color:#64b496 ;
+}
