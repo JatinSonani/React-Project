@@ -1,0 +1,93 @@
+.product-three-container {
+  max-width: 1490px;
+}
+/* Product Card Styling */
+.product-three-card {
+  border-radius: 12px;
+  height: 520px; /* Ensures all cards are the same height */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image Container */
+.product-three-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Needed for absolute positioning of the cart icon */
+}
+
+.product-three-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ✅ Fixed Cart Icon Position (Bottom Center of Image) */
+.cart-three-icon {
+  color: #64b496;
+  position: absolute;
+    bottom: 170px;
+    right: 0;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 3px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cart-three-icon:hover {
+  transform: translateX(-50%) scale(1.1); /* Small zoom effect on hover */
+}
+
+/* Product Details */
+.product-three-category {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 10px 0;
+}
+
+.product-three-rating {
+  color: #ffcc00;
+  font-size: 16px;
+}
+
+.product-three-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-three-price {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #6c757d;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+/* Fix Add to Cart Button */
+.add-to-cart-btn {
+  margin-top: 15px;
+  font-weight: bold;
+  padding: 8px 12px;
+  font-size: 14px;
+}

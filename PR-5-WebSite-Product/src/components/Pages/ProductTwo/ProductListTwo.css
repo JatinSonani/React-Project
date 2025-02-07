@@ -1,0 +1,36 @@
+/* Product List Container */
+.product-two-container .container{
+    padding-top: 0px;
+}
+.product-two-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-two-title {
+    padding-top: 100px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-two-subtitle {
+    font-size: 16px;
+    color: #6c757d;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Grid Layout */
+.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .product-card {
+        height: auto;
+    }
+}
