@@ -8,36 +8,36 @@ const ProductListThree = () => {
     {
       image:
         "https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/product/1.jpg",
-      category: "Snacks",
+      category: "Organic Fresh Lemon",
       rating: 5.0,
-      title: "Best snacks with hazelnut 200gm",
+      title: "Lorem ipsum dolor impicit adipisicing elit.",
       price: 145,
       originalPrice: 150,
     },
     {
       image:
         "https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/product/2.jpg",
-      category: "Fruits",
+      category: "Organic Fresh apple juice",
       rating: 4.5,
-      title: "Fresh organic apple 1kg simla marming",
+      title: "Lorem ipsum dolor impicit adipisicing elit.",
       price: 120.25,
       originalPrice: 123.25,
     },
     {
       image:
         "https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/product/3.jpg",
-      category: "Fruits",
+      category: "Organic watermelon 5kg",
       rating: 3.2,
-      title: "Organic fresh vanilla farm watermelon 5kg",
+      title: "Lorem ipsum dolor impicit adipisicing elit.",
       price: 50.3,
       originalPrice: 72.6,
     },
     {
       image:
         "https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/product/4.jpg",
-      category: "Snacks",
+      category: "Organic fresh venila farm",
       rating: 5.0,
-      title: "Sweet crunchy nut mix 250gm pack",
+      title: "Lorem ipsum dolor impicit adipisicing elit.",
       price: 120.25,
       originalPrice: 123.25,
     },

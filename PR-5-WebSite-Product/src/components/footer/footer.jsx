@@ -7,8 +7,8 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer-container">
-      <Container>
+    <footer className="footer-wrapper"> {/* New wrapper class */}
+      <Container className="footer-container">
         <Row className="footer-content">
           {/* Company Info */}
           <Col md={4} className="footer-section">
@@ -76,7 +76,7 @@ const Footer = () => {
               <FaFacebookF className="social-icon" />
               <FaTwitter className="social-icon" />
               <FaInstagram className="social-icon" />
-              <div className="footer-img rounded me-1 d-flex w-100">
+              <div className="footer-img-container">
                 <img
                   src="https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/insta/1.jpg"
                   alt="insta1"
@@ -84,7 +84,8 @@ const Footer = () => {
                 />
                 <img
                   src="https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/insta/2.jpg"
-                  alt="insta2" className="footer-img"
+                  alt="insta2"
+                  className="footer-img"
                 />
                 <img
                   src="https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/insta/3.jpg"
@@ -116,3 +117,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

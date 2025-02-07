@@ -1,94 +1,94 @@
 .product-container {
-    max-width: 1490px;
+  max-width: 1490px;
 }
 .product-card {
-    border-radius: 12px;
-    height: 520px; /* Ensures all cards are the same height */
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  height: 520px; /* Ensures all cards are the same height */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Needed for absolute positioning of the cart icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Needed for absolute positioning of the cart icon */
 }
 
 .product-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 .product-image {
-    position: absolute;
-    
+  position: absolute;
 }
 
 .cart-icon {
-    color: #64b496;
-    position: absolute;
-    top: -33px;  /* Pushes it up a little inside the image */
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    padding: 3px;
-   
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    
-    transition: transform 0.3s ease-in-out;
+  color: #64b496;
+  position: absolute;
+  top: -33px; /* Pushes it up a little inside the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 3px;
+
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  transition: transform 0.3s ease-in-out;
 }
 
 .cart-icon:hover {
-    transform: translateX(-50%) scale(1.1); /* Small zoom effect on hover */
+  transform: translateX(-50%) scale(1.1); /* Small zoom effect on hover */
 }
 
 .product-category {
-    font-size: 14px;
-    color: #6c757d;
-    margin: 10px 0;
+  font-size: 13px;
+  color: #6c757d;
+  margin: 10px 0;
 }
 
 .product-rating {
-    color: #ffcc00;
-    font-size: 16px;
+  color: #ffcc00;
+  font-size: 16px;
 }
 
 .product-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
+  font-family: "poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 .product-price {
-    color: #28a745;
-    font-weight: bold;
-    font-size: 18px;
+  color: #64b496;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .original-price {
-    text-decoration: line-through;
-    color: #6c757d;
-    font-size: 14px;
-    margin-left: 5px;
+  text-decoration: line-through;
+  color: #6c757d;
+  font-size: 14px;
+  margin-left: 5px;
 }
 
 .add-to-cart-btn {
-    margin-top: 15px;
-    font-weight: bold;
-    padding: 8px 12px;
-    font-size: 14px;
+  margin-top: 15px;
+  font-weight: bold;
+  padding: 8px 12px;
+  font-size: 14px;
 }

@@ -1,7 +1,11 @@
-.footer-container {
-  max-width: 1490px;
-  padding-top: 100px;
+.footer-wrapper {
+  max-width: 1200px; /* Set width similar to upper card section */
   margin: 0 auto;
+}
+
+.footer-container {
+  width: 100%;
+  padding-top: 100px;
   background-color: #f8f9fa;
   font-family: Arial, sans-serif;
 }
@@ -90,6 +94,17 @@
   gap: 10px;
 }
 
+.footer-img-container {
+  display: flex;
+  gap: 4px;
+}
+
+.footer-img {
+  width: 86px;
+  height: 86px;
+  border-radius: 5px;
+}
+
 .social-icon {
   font-size: 18px;
   color: #7a7a7a;
@@ -113,10 +128,4 @@
 .footer-brand {
   font-weight: bold;
   color: #64b496;
-}
-.footer-img {
-  width: 86px;
-  height: 86px;
-  border-radius: 5px;
-  gap: 4;
 }

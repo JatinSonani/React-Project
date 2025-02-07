@@ -15,8 +15,9 @@
 }
 
 .section-two-subtitle {
-    font-size: 16px;
+    font-size: 14px;
     color: #6c757d;
+    font-family: 'poppins', sans-serif;
     max-width: 600px;
     margin: auto;
 }
