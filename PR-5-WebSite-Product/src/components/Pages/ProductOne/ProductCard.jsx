@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Card, Button, Container } from "react-bootstrap";
-import { RiShoppingBagLine, RiHeartLine } from "react-icons/ri";
+import { RiShoppingBagLine, RiHeartLine, RiEyeLine } from "react-icons/ri";
 import "./ProductCard.css";
 
 const ProductCard = ({
@@ -12,15 +12,15 @@ const ProductCard = ({
   price = "",
   originalPrice = "",
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Container className="product-container">
       <Card className="product-card shadow-sm border-1 text-center">
         <div
           className="product-image-container position-relative"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          // onMouseEnter={() => setIsHovered(true)}
+          // onMouseLeave={() => setIsHovered(false)}
         >
           <Card.Img
             variant="top"
@@ -28,12 +28,12 @@ const ProductCard = ({
             alt={title}
             className="product-image border-1"
           />
-          {isHovered && (
             <Button variant="light" className="wishlist-icon rounded-circle">
               <RiHeartLine />
             </Button>
-            
-          )}
+            <Button variant="light" className="eye-icon rounded-circle">
+            <RiEyeLine />
+            </Button>
         </div>
         <Card.Body className="card-body position-relative">
           <div className="cart-icon">

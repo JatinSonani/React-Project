@@ -13,7 +13,6 @@ const ProductCardThree = ({
 }) => {
   return (
     <>
-      
       <div>
         <Container className="product-three-container">
           <Card className="product-three-card shadow-sm border-1 text-center">
@@ -25,9 +24,6 @@ const ProductCardThree = ({
                 className="product-three-image border-1"
               />
             </div>
-            {/* {isHover&& <p>show</p>
-
-            } */}
 
             <Card.Body className="card-three-body position-relative">
               <div className="cart-three-icon">

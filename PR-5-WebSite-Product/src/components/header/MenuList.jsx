@@ -50,7 +50,7 @@ const MainMenu = () => {
   ];
 
   return (
-    <Container className="header-container d-flex justify-content-between align-items-center">
+    <Container className="header-container d-flex justify-content-between align-items-center mb-2">
       <Row className="w-100 align-items-center">
         {/* Left Section: Category Dropdown */}
         <Col md="auto">
@@ -67,7 +67,10 @@ const MainMenu = () => {
               <RiMenu2Line size={20} className="me-2" />
             </Dropdown.Toggle>
 
-            <Dropdown.Menu className="dropdown-menu p-3 category-dropdown">
+            <Dropdown.Menu
+              className="dropdown-menu p-3 category-dropdown"
+              style={{ width: "450px", minHeight: "280px" }}
+            >
               <Row>
                 <Col md={4}>
                   <ListGroup>
@@ -92,7 +95,7 @@ const MainMenu = () => {
                   {categories
                     .filter((category) => category.name === selectedCategory)
                     .map((category) => (
-                      <div key={category.name}>
+                      <div key={category.name} className="d-flex gap-4">
                         {Object.keys(category.subcategories).map(
                           (subcategory) => (
                             <div key={subcategory}>

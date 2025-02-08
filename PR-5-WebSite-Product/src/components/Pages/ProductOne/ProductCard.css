@@ -95,3 +95,23 @@
   padding: 8px 12px;
   font-size: 14px;
 }
+
+.product-image-container:hover .wishlist-icon,
+.product-image-container:hover .eye-icon{
+  transform: translate(0px);
+  transition: all 0.3s;
+}
+
+.wishlist-icon{
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  transform: translate(100px);
+}
+
+.eye-icon{
+  position: absolute;
+  top: 85px;
+  right: 10px;
+  transform: translate(100px);
+}

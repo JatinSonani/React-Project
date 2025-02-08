@@ -5,6 +5,9 @@
   background-color: #e4f2ed;
   align-items: center;
 }
+.product-dec .container{
+  max-width: 1490px;
+}
 .product-section {
   text-align: center;
   margin-bottom: 30px;

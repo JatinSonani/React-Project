@@ -44,13 +44,16 @@ const ProductList = () => {
   ]);
 
   return (
-    <Container className="product-container">
-      <div className="product-dec d-flex justify-content-between">
-        <h3>Product</h3>
-        <p className="product-home">
+    <>
+      <div className="product-dec">
+        <div className="container d-flex justify-content-between align-items-center py-2">
+        <h3 className="mb-0">Product</h3>
+        <p className="product-home mb-0">
           Home <span>- Product</span>
         </p>
+        </div>
       </div>
+    <Container className="product-container">
       <div className="product-section text-center">
         <h2 className="section-title">Style 1</h2>
         <p className="section-subtitle">
@@ -70,6 +73,7 @@ const ProductList = () => {
         )}
       </Row>
     </Container>
+    </>
   );
 };
 

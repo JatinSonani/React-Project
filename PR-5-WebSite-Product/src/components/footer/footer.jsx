@@ -8,7 +8,8 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer-wrapper"> {/* New wrapper class */}
-      <Container className="footer-container">
+      {/* <Container > */}
+        <div className="footer-container">
         <Row className="footer-content">
           {/* Company Info */}
           <Col md={4} className="footer-section">
@@ -106,12 +107,12 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-
         <div className="footer-bottom">
           © 2025 <span className="footer-brand">Carrot</span>, All rights
           reserved.
         </div>
-      </Container>
+</div>
+      {/* </Container> */}
     </footer>
   );
 };

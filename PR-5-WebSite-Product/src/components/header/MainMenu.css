@@ -7,7 +7,7 @@
 .navbar .nav-link {
   color: black !important;
   font-weight: 500;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   padding: 0 20px;
 }
 
@@ -37,7 +37,8 @@
 }
 
 .category-dropdown {
-  width: 500px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .list-group-item:hover {

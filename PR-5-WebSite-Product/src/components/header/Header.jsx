@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Form, FormControl, Button, InputGroup, Dropdown, Container, Row, Col } from "react-bootstrap";
+import {
+  Form,
+  FormControl,
+  Button,
+  InputGroup,
+  Dropdown,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { RiHeart3Line, RiShoppingCartLine, RiUser3Line } from "react-icons/ri";
 import { FaSearch } from "react-icons/fa";
 import "./Header.css";
@@ -51,9 +60,15 @@ const Header = () => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu align="end">
-                    <Dropdown.Item onClick={() => handleSelect("Electronics")}>Electronics</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleSelect("Fashion")}>Fashion</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleSelect("Books")}>Books</Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleSelect("Electronics")}>
+                      Electronics
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleSelect("Fashion")}>
+                      Fashion
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleSelect("Books")}>
+                      Books
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
 
@@ -66,15 +81,24 @@ const Header = () => {
 
             {/* User Options */}
             <div className="d-flex cr-right-bar gap-4 user-icons">
-              <a href="/account" className="cr-right-bar-item text-dark text-decoration-none">
+              <a
+                href="/account"
+                className="cr-right-bar-item text-dark text-decoration-none"
+              >
                 <RiUser3Line />
                 <span> Account</span>
               </a>
-              <a href="/wishlist" className="cr-right-bar-item text-dark text-decoration-none">
+              <a
+                href="/wishlist"
+                className="cr-right-bar-item text-dark text-decoration-none"
+              >
                 <RiHeart3Line />
                 <span> Wishlist</span>
               </a>
-              <a href="/cart" className="cr-right-bar-item text-dark text-decoration-none">
+              <a
+                href="/cart"
+                className="cr-right-bar-item text-dark text-decoration-none"
+              >
                 <RiShoppingCartLine />
                 <span> Cart</span>
               </a>
