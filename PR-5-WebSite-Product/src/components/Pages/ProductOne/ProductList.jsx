@@ -46,8 +46,8 @@ const ProductList = () => {
   return (
     <>
       <div className="product-dec">
-        <div className="container d-flex justify-content-between align-items-center py-2">
-        <h3 className="mb-0">Product</h3>
+        <div className="container d-flex justify-content-between align-items-center py-4">
+        <h3 className="mb-0 fs-5 fw-bold">Product</h3>
         <p className="product-home mb-0">
           Home <span>- Product</span>
         </p>
