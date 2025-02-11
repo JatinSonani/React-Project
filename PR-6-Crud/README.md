@@ -1,8 +1,11 @@
-# React + Vite
+1st Edit 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](https://github.com/JatinSonani/React-Project/blob/main/PR-6-Crud/ScreenShots/Screenshot%202025-02-12%20010834.png)
 
-Currently, two official plugins are available:
+2nd Data can Be sortaccording Position 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![alt text](https://github.com/JatinSonani/React-Project/blob/main/PR-6-Crud/ScreenShots/Screenshot%202025-02-12%20010748.png)
+
+3rd Both Data show
+
+![alt text](https://github.com/JatinSonani/React-Project/blob/main/PR-6-Crud/ScreenShots/Screenshot%202025-02-12%20010804.png)
