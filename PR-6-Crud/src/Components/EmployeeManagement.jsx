@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Table, Card, Alert, Badge, Dropdown } from "react-bootstrap";
+import { RiDeleteBin2Fill, RiEditBoxFill } from "react-icons/ri";
 import "./EmployeeManagement.css";
 
 const EmployeeManagement = () => {
@@ -129,7 +130,7 @@ const EmployeeManagement = () => {
             </Form>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col md={6} className="px-0">
           {employees.length === 0 ? (
             <Alert variant="info" className="text-center">No employees added yet.</Alert>
           ) : (
@@ -157,8 +158,8 @@ const EmployeeManagement = () => {
                       <Badge bg={emp.status === "Active" ? "success" : emp.status === "Inactive" ? "warning" : "danger"}>{emp.status}</Badge>
                     </td>
                     <td>
-                      <Button variant="warning" size="sm" className="me-2" onClick={() => handleEdit(index)}>Edit</Button>
-                      <Button variant="danger" size="sm" onClick={() => handleDelete(index)}>Delete</Button>
+                      <Button variant="warning" size="sm" className="me-2" onClick={() => handleEdit(index)}><RiEditBoxFill /></Button>
+                      <Button variant="danger" size="sm" onClick={() => handleDelete(index)}><RiDeleteBin2Fill /></Button>
                     </td>
                   </tr>
                 ))}
