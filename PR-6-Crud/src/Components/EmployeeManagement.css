@@ -1,0 +1,68 @@
+body {
+  background-color: #f8ede3;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  font-weight: bold;
+}
+
+.table {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #343a40;
+  color: white;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.alert {
+  font-weight: bold;
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border-color: #bee5eb;
+}
+
+.badge {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.dropdown-toggle {
+  background-color: #6c757d !important;
+  border: none;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+button.me-2 {
+  margin-right: 5px;
+}
