@@ -79,7 +79,7 @@ const EmployeeManagement = () => {
       <h2 className="text-center mb-4">Employee Management System</h2>
       <Row className="mb-3 align-items-center">
         <Col md={6}>
-          <Form.Control type="text" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
+          <Form.Control  type="text" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
         </Col>
         <Col md={3}>
           <Dropdown>
@@ -88,14 +88,14 @@ const EmployeeManagement = () => {
               <Dropdown.Item onClick={() => setRoleFilter("All")}>All</Dropdown.Item>
               <Dropdown.Item onClick={() => setRoleFilter("Admin")}>Admin</Dropdown.Item>
               <Dropdown.Item onClick={() => setRoleFilter("HR")}>HR</Dropdown.Item>
-              <Dropdown.Item onClick={() => setRoleFilter("Engineering")}>Engineering</Dropdown.Item>
+              <Dropdown.Item onClick={() => setRoleFilter("Engineering")}>Developer</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Col>
       </Row>
       <Row>
-        <Col md={4}>
-          <Card className="p-4 shadow-sm">
+        <Col md={6}>
+          <Card className="p-4 shadow-sm border-3 border-info">
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
               <Form.Group>
                 <Form.Label>Name</Form.Label>
@@ -131,7 +131,7 @@ const EmployeeManagement = () => {
             </Form>
           </Card>
         </Col>
-        <Col md={8}>
+        <Col md={6}>
           {employees.length === 0 ? (
             <Alert variant="info" className="text-center">No employees added yet.</Alert>
           ) : (

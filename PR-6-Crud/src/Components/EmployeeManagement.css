@@ -1,15 +1,23 @@
 body {
-  background-color: #f8ede3;
   font-family: 'Arial', sans-serif;
+  background-color: #f8ede3;
+background: url(https://www.chromethemer.com/download/hd-wallpapers/abstract-3d-3840x2160.jpg);
+background-size: cover;
+
 }
 
 h2 {
   font-weight: bold;
+  font-family: 'poppins';
   color: #333;
 }
 
 .container {
   max-width: 1100px;
+}
+.form-control {
+  box-shadow: 5px 5px lightblue ;
+  
 }
 
 .card {
