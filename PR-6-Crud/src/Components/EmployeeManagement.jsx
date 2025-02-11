@@ -88,7 +88,7 @@ const EmployeeManagement = () => {
               <Dropdown.Item onClick={() => setRoleFilter("All")}>All</Dropdown.Item>
               <Dropdown.Item onClick={() => setRoleFilter("Admin")}>Admin</Dropdown.Item>
               <Dropdown.Item onClick={() => setRoleFilter("HR")}>HR</Dropdown.Item>
-              <Dropdown.Item onClick={() => setRoleFilter("Engineering")}>Developer</Dropdown.Item>
+              <Dropdown.Item onClick={() => setRoleFilter("Developer")}>Developer</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Col>
