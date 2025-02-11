@@ -3,7 +3,10 @@ import { Container, Row, Col, Form, Button, Table, Card, Alert, Badge, Dropdown 
 import "./EmployeeManagement.css";
 
 const EmployeeManagement = () => {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState(() => {
+    const savedEmployees = localStorage.getItem("employees");
+    return savedEmployees ? JSON.parse(savedEmployees) : [];
+  });
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("All");
   const [formData, setFormData] = useState({
@@ -16,11 +19,6 @@ const EmployeeManagement = () => {
   });
   const [validated, setValidated] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
-
-  useEffect(() => {
-    const storedEmployees = JSON.parse(localStorage.getItem("employees")) || [];
-    setEmployees(storedEmployees);
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("employees", JSON.stringify(employees));
