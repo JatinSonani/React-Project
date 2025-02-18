@@ -1,0 +1,58 @@
+.btn {
+    cursor: pointer;
+    position: relative;
+    padding: 8px 19px;
+    background: white;
+    font-size: 16px; 
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: all 0.3s ease-in-out; 
+    margin: 5px; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    
+    &:after,
+    &:before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border: 0px solid #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:after {
+        top: -1px;
+        left: -1px;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+    }
+
+    &:before {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 3px solid black;
+        border-right: 3px solid black;
+    }
+
+    &:hover {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        
+        &:before,
+        &:after {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.data-container {
+    background: #ffebee;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1; /* Removed scale:2 to fix UI distortion */
+}
