@@ -1,16 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+
+// Load books from localStorage
+const loadFromLocalStorage = () => {
+  const storedBooks = localStorage.getItem("books");
+  return storedBooks ? JSON.parse(storedBooks) : [];
+};
+
+// Save books to localStorage
+const saveToLocalStorage = (books) => {
+  localStorage.setItem("books", JSON.stringify(books));
+};
 
 const BookForm = ({ books, onSave }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // Get books from localStorage if not provided
+  const bookList = books || loadFromLocalStorage();
+
   const existingBook =
-    books.find((b) => b.id === Number(id)) || { title: "", author: "", price: "", image: "", description: "" };
+    bookList.find((b) => b.id === Number(id)) || {
+      title: "",
+      author: "",
+      price: "",
+      image: "",
+      description: "",
+    };
 
   const [book, setBook] = useState(existingBook);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    setBook(existingBook);
+  }, [id, bookList]);
 
   const handleChange = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
@@ -24,13 +48,29 @@ const BookForm = ({ books, onSave }) => {
       return;
     }
 
-    onSave(book);
+    if (isNaN(book.price) || Number(book.price) <= 0) {
+      setError("Price must be a valid number greater than 0.");
+      return;
+    }
+
+    // Save book
+    let updatedBooks;
+    if (book.id) {
+      updatedBooks = bookList.map((b) => (b.id === book.id ? book : b));
+    } else {
+      const newBook = { ...book, id: bookList.length ? bookList[bookList.length - 1].id + 1 : 1 };
+      updatedBooks = [...bookList, newBook];
+    }
+
+    saveToLocalStorage(updatedBooks);
+    onSave && onSave(book);
     navigate("/");
   };
 
   return (
     <Form onSubmit={handleSubmit} className="shadow p-4 rounded">
       {error && <Alert variant="danger">{error}</Alert>}
+      <h2 className="text-center fs-1">{id ? "Edit Book" : "Add Book"}</h2>
 
       <Form.Group className="mb-3">
         <Form.Label>Title</Form.Label>
@@ -57,7 +97,7 @@ const BookForm = ({ books, onSave }) => {
         <Form.Control as="textarea" name="description" value={book.description} onChange={handleChange} />
       </Form.Group>
 
-      <Button type="submit" variant="success">Save Book</Button>
+      <Button type="submit" variant="success">{id ? "Update Book" : "Save Book"}</Button>
     </Form>
   );
 };

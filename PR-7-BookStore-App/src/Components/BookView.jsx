@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Image } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
-import { getBooksFromLocalStorage } from "../Services/LocalStorageData"; // Import localStorage functions
 import "../Css/BookList.css";
 
 const BookView = ({ books }) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [bookList, setBookList] = useState([]);
+  const [bookList, setBookList] = useState(books || []);
 
   useEffect(() => {
-    // Load books from localStorage
-    setBookList(getBooksFromLocalStorage());
-  }, []);
+    if (bookList.length === 0) {
+      setBookList(getBooksFromLocalStorage());
+    }
+  }, [bookList]);
 
   const book = bookList.find((b) => b.id === Number(id));
 
@@ -39,7 +39,7 @@ const BookView = ({ books }) => {
           <tr>
             <td>{book.title}</td>
             <td>{book.author}</td>
-            <td>${book.price}</td>
+            <td>${parseFloat(book.price).toFixed(2)}</td>
             <td>{book.category || "Unknown"}</td>
             <td>{book.description}</td>
           </tr>

@@ -17,7 +17,9 @@ const BookList = ({ books, onDelete }) => {
                 <Card.Text>
                   <strong>Author:</strong> {book.author} <br />
                   <strong>Price:</strong> {book.price} <br />
-                  {book.description}
+                  <strong>Desc:</strong> {book.description} <br />
+                  
+                  
                 </Card.Text>
               </div>
               <div className="mt-auto d-flex justify-content-between">
@@ -27,7 +29,7 @@ const BookList = ({ books, onDelete }) => {
                 <Link to={`/edit/${book.id}`} className="btn px-4 py-2  btn-sm">
                   <FaEdit /> Edit
                 </Link>
-                <Button size="md"  onClick={() => onDelete(book.id)} className="btn px-4 py-2  btn-sm">
+                <Button size="md" variant="light"  onClick={() => onDelete(book.id)} className="btn px-4 py-2  btn-sm">
                   <FaTrash /> Delete
                 </Button>
               </div>
