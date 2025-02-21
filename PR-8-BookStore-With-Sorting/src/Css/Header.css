@@ -1,0 +1,27 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.search-input {
+  padding-right: 35px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  color: gray;
+  cursor: pointer;
+}
+
+.transparent-header {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: none !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.transparent-header:hover {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
