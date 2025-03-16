@@ -1,0 +1,44 @@
+{
+    "recipes": [
+      {
+        "id": "1234",
+        "title": "I-Phone",
+        "instructions": "I-Phone 12 Pro Max is a great phone",
+        "Features": "dcad",
+        "image": "https://m.media-amazon.com/images/I/713SsA7gftL._AC_UF1000,1000_QL80_.jpg",
+        "category": "Gujarati"
+      },
+      {
+        "id": "1235",
+        "title": "Samsung",
+        "instructions": "Samsung Galaxy S21 Ultra is a great phone",
+        "Features": "dcad",
+        "image": "https://m.media-amazon.com/images/I/71cD4NUIBWL._AC_UY218_.jpg",
+        "category": "Punjabi"
+      },
+      {
+        "id": "1236",
+        "title": "One Plus",
+        "instructions": "One Plus 9 Pro is a great phone",
+        "Features": "dcad",
+        "image": "https://m.media-amazon.com/images/I/71PwqXwz5GL._AC_UY218_.jpg",
+        "category": "South Indian"
+      },
+      {
+        "id": "1237",
+        "title": "Oppo",
+        "instructions": "Oppo Reno 5 Pro is a great phone",
+        "Features": "dcad",
+        "image": "https://m.media-amazon.com/images/I/71PwqXwz5GL._AC_UY218_.jpg",
+        "category": "North Indian"
+      },
+      {
+        "id": "1238",
+        "title": "Vivo",
+        "instructions": "Vivo X60 Pro is a great phone",
+        "Features": "dcad",
+        "image": "https://m.media-amazon.com/images/I/71PwqXwz5GL._AC_UY218_.jpg",
+        "category": "Maharashtrian"
+      }
+    ]
+  }
