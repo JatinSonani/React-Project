@@ -1,5 +1,6 @@
 import { Box, Typography, Table, TableBody, TableRow, TableCell, styled } from '@mui/material';
 import { LocalOffer as Badge } from '@mui/icons-material';
+import { Pagination } from 'react-bootstrap';
 
 const SmallText = styled(Box)`
     font-size: 14px;
@@ -67,6 +68,8 @@ const ProductDetail = ({ product }) => {
                     </ColumnText>
                 </TableBody>
             </Table>
+            <Pagination count={10} variant="outlined" color="secondary" />
+
         </>
     );
 };

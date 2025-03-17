@@ -67,7 +67,9 @@ const Search = () => {
               text && 
               <ListWrapper hidden={open}>
                 {
-                  products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
+                  products
+                  .filter(product => product?.title?.longTitle?.toLowerCase().includes(text?.toLowerCase()))
+                  .map(product => (
                     <ListItem>
                       <Link 
                         to={`/product/${product.id}`} 

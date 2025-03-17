@@ -42,21 +42,23 @@ const Remove = styled(Button)`
 const CartItem = ({ item, removeItemFromCart }) => {
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png';
 
+    console.log(item);
+
     return (
         <Component>
             <LeftComponent>
-                <img src={item.url} style={{ height: 110, width: 110 }} />
+                <img src={item.image} style={{ height: 110, width: 110 }} />
                 <GroupButton />
             </LeftComponent>
             <Box style={{ margin: 20 }}>
-                <Typography>{addEllipsis(item.title.longTitle)}</Typography>
+                <Typography>{item.title}</Typography>
                 <SmallText>Seller:RetailNet
                     <span><img src={fassured} style={{ width: 50, marginLeft: 10 }} /></span>
                 </SmallText>
                 <Typography style={{margin: '20px 0'}}>
-                    <Cost component="span">₹{item.price.cost}</Cost>&nbsp;&nbsp;&nbsp;
-                    <MRP component="span"><strike>₹{item.price.mrp}</strike></MRP>&nbsp;&nbsp;&nbsp;
-                    <Discount component="span">{item.price.discount} off</Discount>
+                    <Cost component="span">₹{item.price}</Cost>&nbsp;&nbsp;&nbsp;
+                    <MRP component="span"><strike>₹{item.price}</strike></MRP>&nbsp;&nbsp;&nbsp;
+                    <Discount component="span">{item.price} off</Discount>
                 </Typography>
                 <Remove onClick={() => removeItemFromCart(item.id)}>Remove</Remove>
             </Box>

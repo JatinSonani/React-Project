@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-
 import { Box, Typography, styled } from '@mui/material';
 
 const Header = styled(Box)`
     padding: 15px 24px;
     background: #fff;
-    borderBottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
 `;
 
 const Heading = styled(Typography)`
@@ -36,38 +35,41 @@ const TotalAmount = styled(Typography)`
 const Discount = styled(Typography)`
     font-size: 16px; 
     color: green;
-`
-
-// component: {
-//     // width: '30%'
-// },
-
+`;
 
 const TotalView = ({ cartItems }) => {
     const [price, setPrice] = useState(0);
-    const [discount, setDiscount] = useState(0)
+    const [discount, setDiscount] = useState(0);
 
     useEffect(() => {
         totalAmount();
     }, [cartItems]);
-    
+
     const totalAmount = () => {
-        let price = 0, discount = 0;
-        cartItems.map(item => {
-            price += item.price.mrp
-            discount += (item.price.mrp - item.price.cost) 
-        })
-        setPrice(price);
-        setDiscount(discount);
-    }
+        let totalPrice = 0, totalDiscount = 0;
+    
+        cartItems.forEach(item => {
+            const itemPrice = typeof item.price === "object" ? item.price : Number(item.price); 
+            const itemCost = typeof item.price === "object" ? item.price : Number(item.price);
+            
+            totalPrice += itemPrice;
+            totalDiscount += (itemPrice - itemCost);
+        });
+    
+        setPrice(totalPrice);
+        setDiscount(totalDiscount);
+    };
+    
+
+    console.log(cartItems);
 
     return (
-        <Box>  {/* className={classes.component}> */}
+        <Box>
             <Header>
                 <Heading>PRICE DETAILS</Heading>
             </Header>
             <Container>
-                <Typography>Price ({cartItems?.length} item)
+                <Typography>Price ({cartItems?.length} items)
                     <Price component="span">₹{price}</Price>
                 </Typography>
                 <Typography>Discount
@@ -79,10 +81,12 @@ const TotalView = ({ cartItems }) => {
                 <TotalAmount>Total Amount
                     <Price>₹{price - discount + 40}</Price>
                 </TotalAmount>
-                <Discount>You will save ₹{discount - 40} on this order</Discount>
+                <Discount>
+                    You will save ₹{Math.max(discount - 40, 0)} on this order
+                </Discount>
             </Container>
         </Box>
-    )
-}
+    );
+};
 
 export default TotalView;
