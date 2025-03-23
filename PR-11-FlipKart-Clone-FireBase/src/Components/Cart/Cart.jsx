@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { Box, Typography, Button, Grid, styled } from "@mui/material";
-import { useLocation, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
-
+import { addToCart, removeFromCart, fetchCart } from "../../redux/actions/cartActions";
 import TotalView from "./TotalView";
 import EmptyCart from "./EmptyCart";
 import CartItem from "./CartItem";
@@ -46,29 +44,18 @@ const StyledButton = styled(Button)`
 `;
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const userId = "demoUser"; // Replace with actual userId from Firebase Auth
   const cartDetails = useSelector((state) => state.cart);
   const { cartItems } = cartDetails;
-  // const { id } = useParams();
-  // console.log("id :>> ", id);
-  const location = useLocation();
-  const productId = location.state?.productId;
-  console.log("productId :>> ", productId);
-  const dispatch = useDispatch();
 
-  console.log("cartItems :>> ", cartItems);
-
+  // Fetch cart items when component mounts
   useEffect(() => {
-    if (
-      productId &&
-      cartItems &&
-      cartItems.find((item) => item.id === productId)
-    ) {
-      dispatch(addToCart(productId));
-    }
-  }, [dispatch, cartItems, productId]);
+    dispatch(fetchCart(userId));
+  }, [dispatch, userId]);
 
   const removeItemFromCart = (id) => {
-    dispatch(removeFromCart(id));
+    dispatch(removeFromCart(id, userId));
   };
 
   const buyNow = () => {

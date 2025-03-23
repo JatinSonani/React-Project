@@ -12,6 +12,7 @@ import ContextProvider from "./context/ContextProvider";
 import Cart from "./Components/Cart/Cart";
 import DetailView from "./Components/ItemsDetails/DetailView";
 import AddProduct from "./Components/AddProduct"
+import Footer from "../src/Components/Footer/Footer"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <ContextProvider>
           <BrowserRouter>
             <Header />
+            
             <Box style={{ marginTop: 54 }}>
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -33,6 +35,7 @@ function App() {
           </BrowserRouter>
         </ContextProvider>
       </TemplateProvider>
+      <Footer />
     </Provider>
   );
 }

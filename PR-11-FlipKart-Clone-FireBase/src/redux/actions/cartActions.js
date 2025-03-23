@@ -17,6 +17,7 @@ const getProductFromFirebase = async (id) => {
 const getCartFromFirebase = async (userId) => {
     const cartRef = collection(db, "carts", userId, "items");
     const cartSnap = await getDocs(cartRef);
+    console.log("CartSnap:", cartSnap);
     
     let cartItems = [];
     cartSnap.forEach(doc => {
@@ -96,13 +97,18 @@ export const removeFromCart = (id, userId) => async (dispatch) => {
 // ** Fetch Cart Items for User **
 export const fetchCart = (userId) => async (dispatch) => {
     try {
+        console.log("Fetching cart...");
         const cartItems = await getCartFromFirebase(userId);
+        
+        console.log("Fetched Cart Items:", cartItems);
+        console.log("Dispatching FETCH_CART_SUCCESS...");
 
-        // Dispatch action
-        dispatch({ type: actionTypes.FETCH_CART_SUCCESS, payload: cartItems });
+        dispatch({ type: actionTypes.FETCH_CART_SUCCESS, payload: Object.values(cartItems) });
 
     } catch (error) {
-        console.log("Error fetching cart:", error);
+        console.error("Error fetching cart:", error);
+
+        console.log("Dispatching FETCH_CART_FAIL...");
         dispatch({ type: actionTypes.FETCH_CART_FAIL, payload: error.message });
     }
 };

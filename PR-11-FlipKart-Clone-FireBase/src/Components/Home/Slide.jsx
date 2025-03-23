@@ -95,7 +95,7 @@ const MultiSlide = ({ data = [], timer, title }) => {
                 centerMode={true}
                 infinite={true}
                 autoPlay={true}
-                autoPlaySpeed={10000}
+                autoPlaySpeed={2000}
                 keyBoardControl={true}
                 showDots={false}
                 containerClass="carousel-container"
