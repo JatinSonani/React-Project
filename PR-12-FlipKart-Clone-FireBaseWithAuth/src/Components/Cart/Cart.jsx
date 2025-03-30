@@ -73,7 +73,6 @@ const Cart = () => {
   // console.log("data :>> ", data);
 
 
-
   
   // useEffect(() => {
   //   if (productId) {
