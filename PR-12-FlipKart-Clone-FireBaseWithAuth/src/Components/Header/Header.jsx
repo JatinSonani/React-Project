@@ -1,11 +1,9 @@
 import { useState } from 'react';
-
 import { AppBar, Toolbar, Box, Typography, IconButton, Drawer, List, styled } from '@mui/material';
 import { Menu } from '@mui/icons-material';
-
 import { Link } from 'react-router-dom';
 
-//components
+// Components
 import CustomButtons from './CustomButtons';
 import Search from './Search';
 
@@ -19,18 +17,20 @@ const Component = styled(Link)`
     line-height: 0;
     color: #FFFFFF;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 `;
 
 const SubHeading = styled(Typography)`
     font-size: 10px;
     font-style: italic;
-`
+`;
 
 const PlusImage = styled('img')({
     width: 10,
     height: 10,
     marginLeft: 4
-})
+});
 
 const MenuButton = styled(IconButton)(({ theme }) => ({
     display: 'none',
@@ -39,8 +39,10 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
     }
 }));
 
-const CustomButtonWrapper = styled('span')(({ theme }) => ({ 
-    margin: '0 5% 0 auto', 
+const CustomButtonWrapper = styled('span')(({ theme }) => ({
+    margin: '0 5% 0 auto',
+    display: 'flex',
+    alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
         display: 'none'
     }
@@ -51,34 +53,27 @@ const Header = () => {
     const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
 
     const [open, setOpen] = useState(false);
-    
 
     const handleClose = () => {
         setOpen(false);
-    }
+    };
 
     const handleOpen = () => {
         setOpen(true);
-    }
+    };
 
     const list = () => (
         <Box style={{ width: 250 }} onClick={handleClose}>
             <List>
-                <listItem button>
-                    <CustomButtons />
-                </listItem>
+                <CustomButtons />
             </List>
         </Box>
     );
 
-
     return (
         <StyledHeader position="fixed">
-            <Toolbar style={{ minHeight: 55 }}>
-                <MenuButton
-                    color="inherit"
-                    onClick={handleOpen}
-                >
+            <Toolbar style={{ minHeight: 55, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <MenuButton color="inherit" onClick={handleOpen}>
                     <Menu />
                 </MenuButton>
 
@@ -87,23 +82,26 @@ const Header = () => {
                 </Drawer>
 
                 <Component to='/'>
-                    <img src={logoURL} style={{ width: 75 }} />
-                    <Box component="span" style={{ display: 'flex' }}>
-                        <SubHeading>Explore&nbsp;
-                            <Box component="span" style={{color:'#FFE500'}}>
+                    <img src={logoURL} alt="Flipkart Logo" style={{ width: 75 }} />
+                    <Box component="span" style={{ display: 'flex', alignItems: 'center' }}>
+                        <SubHeading>
+                            Explore&nbsp;
+                            <Box component="span" style={{ color: '#FFE500' }}>
                                 Plus
                             </Box>
                         </SubHeading>
-                        <PlusImage src={subURL} />
+                        <PlusImage src={subURL} alt="Plus Icon" />
                     </Box>
                 </Component>
+
                 <Search />
+
                 <CustomButtonWrapper>
                     <CustomButtons />
                 </CustomButtonWrapper>
             </Toolbar>
         </StyledHeader>
-    )
-}
+    );
+};
 
 export default Header;

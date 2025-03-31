@@ -185,7 +185,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
               </Text>
               <LoginButton onClick={loginUser}>Login</LoginButton>
               <Text style={{ textAlign: "center" }}>OR</Text>
-              <button onClick={handleGoogleLogin}>Sign in with Google</button>
+              <Button onClick={handleGoogleLogin}>Sign in with Google</Button>
               <CreateAccount onClick={toggleSignup}>
                 New to Flipkart? Create an account
               </CreateAccount>

@@ -100,10 +100,10 @@ const CustomButtons = () => {
         </>
       )}
 
-      <Typography component={Link} to="/addproduct" sx={{ marginTop: 3, whiteSpace: "nowrap" }}>
+      <Typography component={Link} to="/addproduct" sx={{ marginTop: 0, whiteSpace: "nowrap" }}>
         Add Product
       </Typography>
-      <Typography sx={{ marginTop: 3 }}>More</Typography>
+      <Typography sx={{ marginTop: 0 }}>More</Typography>
 
       {/* ✅ Cart Section */}
       <Container to="/cart">
