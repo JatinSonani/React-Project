@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../server/firebaseConfig";
 import { Box, TextField, Button, Typography, Card, CardContent, CardMedia } from "@mui/material";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 export default function EditProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [editingProduct, setEditingProduct] = useState(null);
+    const [imagePreview, setImagePreview] = useState(null);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -25,10 +27,23 @@ export default function EditProducts() {
 
     const handleEditClick = (product) => {
         setEditingProduct({ ...product });
+        setImagePreview(product.image);
     };
 
     const handleInputChange = (e) => {
         setEditingProduct({ ...editingProduct, [e.target.name]: e.target.value });
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setEditingProduct({ ...editingProduct, image: reader.result });
+                setImagePreview(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
     };
 
     const handleSaveChanges = async () => {
@@ -43,6 +58,7 @@ export default function EditProducts() {
             });
             setProducts(products.map(p => (p.id === editingProduct.id ? editingProduct : p)));
             setEditingProduct(null);
+            setImagePreview(null);
         } catch (error) {
             console.error("Error updating product:", error);
         }
@@ -59,42 +75,24 @@ export default function EditProducts() {
             {editingProduct ? (
                 <Box sx={{ p: 2, border: "1px solid #ddd", borderRadius: 2, mb: 3 }}>
                     <Typography variant="h6">Editing: {editingProduct.title}</Typography>
-                    <TextField 
-                        label="Title" 
-                        name="title"
-                        value={editingProduct.title} 
-                        onChange={handleInputChange} 
-                        fullWidth 
-                        sx={{ mb: 2 }}
-                    />
-                    <TextField 
-                        label="Price" 
-                        name="price"
-                        value={editingProduct.price} 
-                        onChange={handleInputChange} 
-                        fullWidth 
-                        sx={{ mb: 2 }}
-                    />
-                    <TextField 
-                        label="Description" 
-                        name="instructions"
-                        value={editingProduct.instructions} 
-                        onChange={handleInputChange} 
-                        fullWidth 
-                        sx={{ mb: 2 }}
-                    />
-                    <TextField 
-                        label="Image URL" 
-                        name="image"
-                        value={editingProduct.image} 
-                        onChange={handleInputChange} 
-                        fullWidth 
-                        sx={{ mb: 2 }}
-                    />
-                    <Button variant="contained" color="primary" onClick={handleSaveChanges} sx={{ mr: 2 }}>
+                    <TextField label="Title" name="title" value={editingProduct.title} onChange={handleInputChange} fullWidth sx={{ mb: 2 }} />
+                    <TextField label="Price" name="price" value={editingProduct.price} onChange={handleInputChange} fullWidth sx={{ mb: 2 }} />
+                    <TextField label="Description" name="instructions" value={editingProduct.instructions} onChange={handleInputChange} fullWidth sx={{ mb: 2 }} />
+                    
+                    <Box mt={2} textAlign="center">
+                        {imagePreview && (
+                            <img src={imagePreview} alt="Preview" style={{ width: "100%", maxHeight: 200, borderRadius: 8, objectFit: "cover" }} />
+                        )}
+                        <Button variant="contained" component="label" startIcon={<CloudUploadIcon />} sx={{ mt: 2, width: "100%" }}>
+                            Upload Image
+                            <input type="file" hidden accept="image/*" onChange={handleImageChange} />
+                        </Button>
+                    </Box>
+                    
+                    <Button variant="contained" color="primary" onClick={handleSaveChanges} sx={{ mr: 2, mt: 2 }}>
                         Save Changes
                     </Button>
-                    <Button variant="outlined" color="secondary" onClick={() => setEditingProduct(null)}>
+                    <Button variant="outlined" color="secondary" onClick={() => setEditingProduct(null)} sx={{ mt: 2 }}>
                         Cancel
                     </Button>
                 </Box>
